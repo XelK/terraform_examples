@@ -1,4 +1,8 @@
-#variables:
+# variables:
+* can contain:
+	* description 
+	* default
+	* type
 ## declaring:
 ```
 variable "NAME" {
