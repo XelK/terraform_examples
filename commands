@@ -1,1 +1,0 @@
-terraform graph | dot -Tsvg > graph.svg   ## permit to create graph
