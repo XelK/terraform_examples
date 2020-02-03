@@ -64,5 +64,31 @@ variable "object_example" {
   }
 }
 ```
+## data:
+* __a data source represents a pieace of read-only information that is fetched from the provider. Not create anything new, it's just query the provider's APIs for data and to make the data available to the rest of your Terraform code.__
+* declaring: 
+```
+data "<PROVIDER>_<TYPE>" "<NAME>" {
+	[CONFIG ...]
+}
+```
+* using: 
+```
+	data.<PROVIDER>_<TYPE>.<NAME>.<ATTRIBUTE> 
+	data.aws_vpc.default.id
+```
+
+
+
+-----------
 ### create graph
 terraform graph | dot -Tsvg > graph.svg   ## permit to create graph
+
+--------
+## AWS 
+* Application Load Balancer (ALB)
+	* Best suited for load balancing of HTTP and HTTPS traffic. Operates at the application layer (Layer 7) of the OSI model.
+* Network Load Balancer (NLB)
+	* Best suited for load balancing of TCP, UDP, and TLS traffic. Can scale up and down in response to load faster than the ALB (the NLB is designed to scale to tens of millions of requests per second). Operates at the transport layer (Layer 4) of the OSI model.
+* Classic Load Balancer (CLB)
+	* This is the “legacy” load balancer that predates both the ALB and NLB. It can handle HTTP, HTTPS, TCP, and TLS traffic, but with far fewer features than either the ALB or NLB. Operates at both the application layer (L7) and transport layer (L4) of the OSI model
