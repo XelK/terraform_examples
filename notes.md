@@ -1,4 +1,6 @@
 # variables:
+* available types:
+	* string, number, bool, list, map, set, object, tuple, and any
 * can contain:
 	* description 
 	* default
@@ -8,6 +10,10 @@
 variable "NAME" {
   [CONFIG ...]
 }
+```
+## using vars:
+```
+${var.server_port}
 ```
 ## types: 
 ### numbers
