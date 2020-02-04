@@ -2,12 +2,6 @@ provider "aws"{
 	region = "us-east-2"
 }
 
-variable "port"{
-	description = "default port"
-	type = number 
-	default = 8080
-}
-
 data "aws_vpc" "default" {
   default = true
 }
@@ -145,9 +139,4 @@ resource "aws_security_group" "instance"{
 		protocol = "tcp"
 		cidr_blocks = ["0.0.0.0/0"]
 	}
-}
-
-output "alb_dns_name"{
-	description="Domain name of the load balancer"
-	value = aws_lb.example.dns_name
 }
