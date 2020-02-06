@@ -7,7 +7,8 @@ resource "aws_lb" "example"{
 
 resource "aws_lb_listener" "http" {
 	load_balancer_arn = aws_lb.example.arn
-	port = "${ var.port }"
+	#port = "${ var.port }"
+	port = var.port
 	protocol = "HTTP"
 	default_action {
 		type = "fixed-response"	
@@ -40,8 +41,9 @@ resource "aws_lb_listener_rule" "asg" {
 	listener_arn = aws_lb_listener.http.arn
 	priority = 100
 	condition {
-		field = "path-pattern"	
-		values = ["*"]
+		path_pattern {
+			values = ["*"]
+		}
 	}
 	action {
 		type = "forward"	
