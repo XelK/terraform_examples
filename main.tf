@@ -1,13 +1,13 @@
-terraform {
-	backend "s3" {
-		bucket = "469169qa780679234-terraform-test"
-		key = "global/s3/terraform.tfstate"
-		region = "us-east-2"
-	
-#		dynamodb_table = "terraform-test-locks"
-#		encrypt = true
-	}
-}
+#terraform {
+#	backend "s3" {
+#		bucket = "469169qa780679234-terraform-test"
+#		key = "global/s3/terraform.tfstate"
+#		region = "us-east-2"
+#	
+##		dynamodb_table = "terraform-test-locks"
+##		encrypt = true
+#	}
+#}
 provider "aws"{
 	region = "us-east-2"
 }
@@ -16,10 +16,10 @@ resource "aws_s3_bucket" "terraform_state" {
 	bucket = "469169qa780679234-terraform-test"
 	region = "us-east-2"
 
-	# prevent accidental deletion of this s3 bucket
-	lifecycle {
-		prevent_destroy = true
-	}
+#	# prevent accidental deletion of this s3 bucket
+#	lifecycle {
+#		prevent_destroy = true
+#	}
 	# enable versioning
 	versioning {
 		enabled = true
