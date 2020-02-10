@@ -10,5 +10,5 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
-#    - name: Lint Terraform
-#      uses: actionshub/terraform-lint@master
+    - name: Lint Terraform
+      uses: actionshub/terraform-lint@master
