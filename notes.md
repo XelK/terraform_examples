@@ -78,6 +78,9 @@ data "<PROVIDER>_<TYPE>" "<NAME>" {
 	data.aws_vpc.default.id
 ```
 
+## terraform_remote_state
+__Terraform remote state data source permit to read information from another remote state. The date in this state will be accessible in read-only manner__
+
 
 
 -----------

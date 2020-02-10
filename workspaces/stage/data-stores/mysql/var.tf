@@ -6,6 +6,6 @@ variable "db_password" {
 variable "db_name" {
     description = "The name to use for the database"
     type = string
-    default = "terraform_db_example"
+    default = "terraform_db_example_test"
   
 }
