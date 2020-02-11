@@ -39,3 +39,25 @@ resource "aws_security_group" "instance" {
     Name = "security-group for instance"
   }
 }
+
+
+resource "aws_security_group" "permit-ssh" {
+  name                   = "terraform-permit-ssh-instance"
+  revoke_rules_on_delete = true
+  ingress {
+    description     = "limit access only from load balancer"
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "security-group for instance-ssh"
+  }
+}

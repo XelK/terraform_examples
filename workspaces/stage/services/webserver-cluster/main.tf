@@ -12,3 +12,12 @@ terraform {
     encrypt        = true
   }
 }
+
+data "terraform_remote_state" "db" {
+  backend = "s3"
+  config = {
+    bucket = "469169qa780679234-terraform-test"
+    key = "workspaces/stage/data-store/mysql/terraform.tfstate"
+    region = "us-east-2"
+  }
+}
