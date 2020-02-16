@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+region = "us-east-2"
 }
 
 terraform {
@@ -21,9 +21,5 @@ resource "aws_db_instance" "tf_example_db" {
   skip_final_snapshot = true
   name                = var.db_name
   username            = "admin"
-  password            = data.aws_secrestmanager_secret_version.db_password.secret_string
-}
-
-data "aws_secretsmanager_secret_version" "db_password" {
-  secret_id = "mysql-master-password-stage"
+  password            = var.db_password
 }
