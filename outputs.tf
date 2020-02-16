@@ -8,7 +8,7 @@
 #  description = "The name of the DynamoDB table"
 #}
 
-output "alb_dns_name"{
-	description="Domain name of the load balancer"
-	value = aws_lb.example.dns_name
+output "alb_dns_name" {
+  description = "Domain name of the load balancer"
+  value       = aws_lb.example.dns_name
 }
